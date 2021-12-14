@@ -171,6 +171,8 @@ jobs:
             exit 1
           fi
 
+          docker rmi $(docker images | grep microsoft/azuretre | tr -s ' ' | cut -d ' ' -f 3)
+
   e2e_tests:
     name: "Run E2E Tests"
     runs-on: ubuntu-latest
